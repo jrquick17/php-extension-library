@@ -1,3 +1,7 @@
+# About
+
+  * This is a resource files for enabling Redis in MAMP for various versions of PHP. 
+
 # Installation:
 
   1. Download `redis.so` 
