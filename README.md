@@ -19,6 +19,9 @@ This is a PHP extension library collection with `*.so` files to make adding libr
 
 ### pcntl.so
 
+*Current Versions*
+* php@^7.0.0
+
   1. Download `pcntl.so` from the appropriate subdirectory of this repo based on your php version
   2. Move to extensions
     * Move `pcntl.so` file to `/Applications/MAMP/bin/php/phpX.Y.Z/lib/php/extensions/no-debug-non-zts-xxxxxxxx`
