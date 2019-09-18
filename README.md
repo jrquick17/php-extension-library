@@ -1,8 +1,19 @@
-# About
+# php-extension-library
 
-  * This is a resource files for enabling Redis in MAMP for various versions of PHP. 
+## Index ##
 
-# Installation:
+* [About](#about)
+* [Setup](#setup)
+* [Documentation](#documentation)
+* [Issues](#issues)
+
+## About ## 
+
+This is a resource files for enabling Redis in MAMP for various versions of PHP. 
+
+* Visit [my website](https://jrquick.com) for other cool projects!
+
+## Setup
 
   1. Download `redis.so` 
     * Download `redis.so` from the appropriate subdirectory of this repo based on major and minor version number X.Y.
@@ -13,9 +24,9 @@
       * **Tip:** Use `php --ini` to locate the file.
   4. Restart MAMP.
 
-## How to do it yourself.
+## Documentation
 
-### For 3.x
+#### For 3.x
 
   1. Mkdir `include/php` in `/Applications/MAMP/bin/php/phpX.Y.Z/`
     * Example: `/Applications/MAMP/bin/php/php5.5.10/include/php`.
@@ -29,7 +40,7 @@
     * **Tip:** Open MAMP click File → Edit Template → PHP → PHP 5.X.Y php.ini
   7. Restart MAMP.
 
-### For 4.x
+#### For 4.x
   0. You may need install `autoconf` via `brew install autoconf`.
   1. `cd /Applications/MAMP/bin/php/phpX.Y.Z/bin` and execute `./pecl install redis` (for default version) 
     * **Tip:** Run `./pecl install redis-3.1.2` for special version.
@@ -37,4 +48,6 @@
     * **Tip:** Open MAMP Pro dashboard → LANGUAGE-PHP → 'Manually enable other extensions'
   3. Restart MAMP.
 
+## Issues ##
 
+If you find any issues feel free to open a request in [the Issues tab](https://github.com/jrquick17/php-extension-library/issues). If I have the time I will try to solve any issues but cannot make any guarantees. Feel free to contribute yourself.
