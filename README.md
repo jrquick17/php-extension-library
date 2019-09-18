@@ -27,6 +27,14 @@ This is a PHP extension library collection with `*.so` files to make adding libr
       * **Tip:** Use `php --ini` to locate the file.
 
 ### redis.so
+
+*Current Versions*
+* php@5.4.42
+* php@5.5.18
+* php@5.6.2
+* php@7.0.8
+* php@7.1.8
+
 #### php@^3.0.0
 
   1. Mkdir `include/php` in php root
