@@ -421,7 +421,11 @@ function pcntl() {
       return
     fi
 
-    wget "http://museum.php.net/php$major/php-$1.tar.gz"
+    # php@<=7.2.5
+    # wget "http://museum.php.net/php$major/php-$1.tar.gz"
+
+    # php@>=7.2.6
+    wget "https://www.php.net/distributions/php-$1.tar.gz"
 
     tar xvf "php-$1.tar.gz"
 
