@@ -9,26 +9,27 @@
 
 ## About ## 
 
-This is a resource files for enabling Redis in MAMP for various versions of PHP. 
+This is a PHP extension library collection with `*.so` files to make adding libraries to PHP easy. 
 
 * Visit [my website](https://jrquick.com) for other cool projects!
 
 ## Setup
 
-  1. Download `redis.so` 
-    * Download `redis.so` from the appropriate subdirectory of this repo based on major and minor version number X.Y.
-  2. Move to MAMP
-    * Move `redis.so` file to `/Applications/MAMP/bin/php/phpX.Y.Z/lib/php/extensions/no-debug-non-zts-xxxxxxxx`
-  3. Update INI
-    * Add `extension=redis.so` to the end of your `php.ini`
-      * **Tip:** Use `php --ini` to locate the file.
-  4. Restart MAMP.
-
 ## Documentation
 
-#### For 3.x
+### pcntl.so
 
-  1. Mkdir `include/php` in `/Applications/MAMP/bin/php/phpX.Y.Z/`
+  1. Download `pcntl.so` from the appropriate subdirectory of this repo based on your php version
+  2. Move to extensions
+    * Move `pcntl.so` file to `/Applications/MAMP/bin/php/phpX.Y.Z/lib/php/extensions/no-debug-non-zts-xxxxxxxx`
+  3. Update INI
+    * Add `extension=pcntl.so` to your `php.ini`
+      * **Tip:** Use `php --ini` to locate the file.
+
+### redis.so
+#### php@^3.0.0
+
+  1. Mkdir `include/php` in php root
     * Example: `/Applications/MAMP/bin/php/php5.5.10/include/php`.
   2. Download php source file from php.net
     * Example: If you want to compile extension for `php 5.4.42`, then download `php5.4.42.tar.gz`
@@ -37,16 +38,21 @@ This is a resource files for enabling Redis in MAMP for various versions of PHP.
   5. `cd /Applications/MAMP/bin/php/phpX.Y.Z/bin` and execute `./pecl install redis` (for default version)
     * **Tip:**: Run `./pecl install redis-2.2.8` for special version.
   6. Add `extension="redis.so"` to the end of `php.ini` 
-    * **Tip:** Open MAMP click File → Edit Template → PHP → PHP 5.X.Y php.ini
-  7. Restart MAMP.
 
-#### For 4.x
+#### php@^4.0.0
   0. You may need install `autoconf` via `brew install autoconf`.
   1. `cd /Applications/MAMP/bin/php/phpX.Y.Z/bin` and execute `./pecl install redis` (for default version) 
     * **Tip:** Run `./pecl install redis-3.1.2` for special version.
   2. Add `extension="redis.so"` to the end of `php.ini`
-    * **Tip:** Open MAMP Pro dashboard → LANGUAGE-PHP → 'Manually enable other extensions'
-  3. Restart MAMP.
+  
+#### php@>=5.0.0
+
+  1. Download `pcntl.so` from the appropriate subdirectory of this repo based on your php version
+  2. Move to extensions
+    * Move `redis.so` file to `/Applications/MAMP/bin/php/phpX.Y.Z/lib/php/extensions/no-debug-non-zts-xxxxxxxx`
+  3. Update INI
+    * Add `extension=redis.so` to your `php.ini`
+      * **Tip:** Use `php --ini` to locate the file.
 
 ## Issues ##
 
