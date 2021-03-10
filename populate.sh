@@ -474,7 +474,7 @@ function pcntl() {
 
     make
 
-    cp modules/pcntl.so "../../../php$1/"
+    cp -f modules/pcntl.so "../../../php$1/"
 
     cd ../../..
 }
