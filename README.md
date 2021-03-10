@@ -20,7 +20,6 @@ This is a PHP extension library collection with `*.so` files to make adding libr
 ### pcntl.so
 
 *Current Versions*
-* php@5.*
 * php@7.1.*
 * php@7.2.*
 * php@7.3.*
