@@ -1,4 +1,5 @@
 *.tar.gz
+php-*
+phpredis-*
 
 .idea/
-php-*/
