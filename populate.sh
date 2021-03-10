@@ -442,8 +442,20 @@ function pcntl() {
         mkdir "php$1"
     fi
 
-    if  [[ $1 == 7.4.* ]]; then
-        config="--with-php-config=/Applications/MAMP/bin/php/php7.4.12/bin/php-config"
+    if  [[ $1 == 5.4.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php5.4.45/bin/php-config"
+    elif [[ $1 == 5.6.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php5.6.40/bin/php-config"
+    elif [[ $1 == 7.0.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php7.0.33/bin/php-config"
+    elif [[ $1 == 7.1.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php7.1.33/bin/php-config"
+    elif [[ $1 == 7.2.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php7.2.34/bin/php-config"
+    elif [[ $1 == 7.3.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php7.3.24/bin/php-config"
+    elif [[ $1 == 7.4.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php8.0.0/bin/php-config"
     elif [[ $1 == 8.* ]]; then
         config="--with-php-config=/Applications/MAMP/bin/php/php8.0.0/bin/php-config"
     else
