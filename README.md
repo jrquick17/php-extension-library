@@ -20,7 +20,12 @@ This is a PHP extension library collection with `*.so` files to make adding libr
 ### pcntl.so
 
 *Current Versions*
-* php@^7.0.0
+* php@5.*
+* php@7.1.*
+* php@7.2.*
+* php@7.3.*
+* php@7.4.*
+* php@8.*
 
   1. Download `pcntl.so` from the appropriate subdirectory of this repo based on your php version
   2. Move to extensions
@@ -32,11 +37,12 @@ This is a PHP extension library collection with `*.so` files to make adding libr
 ### redis.so
 
 *Current Versions*
-* php@5.4.42
-* php@5.5.18
-* php@5.6.2
-* php@7.0.8
-* php@7.1.8
+* php@5.*
+* php@7.1.*
+* php@7.2.*
+* php@7.3.*
+* php@7.4.*
+* php@8.*
 
 #### php@^3.0.0
 
