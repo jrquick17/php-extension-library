@@ -470,8 +470,18 @@ function pcntl() {
       tar xvf "$tar"
     fi
 
-    if  [[ $1 == 5.4.* ]]; then
+    if  [[ $1 == 5.0.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php5.1.6/bin/php-config"
+    elif [[ $1 == 5.1.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php5.1.6/bin/php-config"
+    elif [[ $1 == 5.2.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php5.2.17/bin/php-config"
+    elif [[ $1 == 5.3.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php5.3.29/bin/php-config"
+    elif [[ $1 == 5.4.* ]]; then
         config="--with-php-config=/Applications/MAMP/bin/php/php5.4.45/bin/php-config"
+    elif [[ $1 == 5.5.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php5.5.26/bin/php-config"
     elif [[ $1 == 5.6.* ]]; then
         config="--with-php-config=/Applications/MAMP/bin/php/php5.6.40/bin/php-config"
     elif [[ $1 == 5.* ]]; then
@@ -485,9 +495,9 @@ function pcntl() {
     elif [[ $1 == 7.3.* ]]; then
         config="--with-php-config=/Applications/MAMP/bin/php/php7.3.24/bin/php-config"
     elif [[ $1 == 7.4.* ]]; then
-        config="--with-php-config=/Applications/MAMP/bin/php/php7.4.12/bin/php-config"
+        config="--with-php-config=/Applications/MAMP/bin/php/php8.0.0/bin/php-config"
     elif [[ $1 == 7.* ]]; then
-        config="--with-php-config=/Applications/MAMP/bin/php/php7.4.12/bin/php-config"
+        config="--with-php-config=/Applications/MAMP/bin/php/php8.0.0/bin/php-config"
     elif [[ $1 == 8.* ]]; then
         config="--with-php-config=/Applications/MAMP/bin/php/php8.0.0/bin/php-config"
     else
@@ -516,8 +526,18 @@ function pcntl() {
 function redis() {
     log "Starting redis for PHP $i..."
 
-    if  [[ $1 == 5.4.* ]]; then
+    if  [[ $1 == 5.0.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php5.1.6/bin/php-config"
+    elif [[ $1 == 5.1.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php5.1.6/bin/php-config"
+    elif [[ $1 == 5.2.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php5.2.17/bin/php-config"
+    elif [[ $1 == 5.3.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php5.3.29/bin/php-config"
+    elif [[ $1 == 5.4.* ]]; then
         config="--with-php-config=/Applications/MAMP/bin/php/php5.4.45/bin/php-config"
+    elif [[ $1 == 5.5.* ]]; then
+        config="--with-php-config=/Applications/MAMP/bin/php/php5.5.26/bin/php-config"
     elif [[ $1 == 5.6.* ]]; then
         config="--with-php-config=/Applications/MAMP/bin/php/php5.6.40/bin/php-config"
     elif [[ $1 == 5.* ]]; then
