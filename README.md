@@ -19,25 +19,80 @@ This library provides pre-compiled shared object files for popular PHP extension
 - **pcntl** - Process Control functions for Unix-like systems
 - **redis** - Redis client for connecting to Redis databases
 
+## Extension Comparison Table
+
+| Feature | **PCNTL** | **Redis** |
+|---------|-----------|-----------|
+| **Primary Purpose** | Process Control & Forking | In-Memory Data Store & Caching |
+| **Platform Support** | Unix/Linux only | Cross-platform |
+| **Web Server Compatible** | ❌ CLI only | ✅ Full support |
+| **Memory Usage** | Low | High (in-memory storage) |
+| **Performance Impact** | Minimal | Very fast (RAM-based) |
+| **Data Persistence** | N/A | Optional (configurable) |
+| **Complexity** | Medium | Low-Medium |
+| **Learning Curve** | Steep | Moderate |
+
+### 📋 **Detailed Feature Comparison**
+
+| **Category** | **PCNTL Extension** | **Redis Extension** |
+|--------------|-------------------|-------------------|
+| **Core Functions** | `pcntl_fork()`, `pcntl_exec()`, `pcntl_wait()`, `pcntl_signal()` | `SET`, `GET`, `DEL`, `EXISTS`, `EXPIRE`, `INCR` |
+| **Data Types** | Process IDs, Exit codes, Signals | Strings, Lists, Sets, Hashes, Sorted Sets, Streams |
+| **Concurrency** | Multi-process via forking | Single-threaded with async I/O |
+| **Use Cases** | CLI scripts, daemons, parallel processing | Web caching, session storage, real-time features |
+| **Resource Usage** | CPU-intensive for forking | Memory-intensive for storage |
+| **Scalability** | Limited by system processes | Horizontal via clustering |
+| **Error Handling** | Signal-based, exit codes | Exception-based, connection errors |
+| **Configuration** | Process limits, signal masks | Connection pools, serialization, compression |
+
 ## Supported Extensions
 
 ### 📦 PCNTL Extension
-Process Control extension that enables PHP to fork processes and handle signals.
+**Process Control for Unix Systems**
 
-**Use cases:**
-- Multi-process applications
-- Signal handling
-- Process management
-- Background job processing
+**Key Features:**
+- ✅ Process forking (`pcntl_fork()`)
+- ✅ Signal handling (`pcntl_signal()`)
+- ✅ Process execution (`pcntl_exec()`)
+- ✅ Child process management (`pcntl_wait()`)
+- ✅ Alarm scheduling (`pcntl_alarm()`)
+
+**Best For:**
+- Command-line applications
+- Background job processors
+- Multi-process daemons
+- System administration scripts
+- Parallel task execution
+
+**Limitations:**
+- Unix/Linux systems only
+- Not suitable for web servers
+- Requires careful memory management
 
 ### 📦 Redis Extension
-High-performance Redis client for PHP applications.
+**High-Performance In-Memory Data Store**
 
-**Use cases:**
-- Caching
-- Session storage
-- Real-time messaging
-- Data structure operations
+**Key Features:**
+- ✅ Multiple data structures (strings, lists, sets, hashes)
+- ✅ Built-in serialization (PHP, JSON, igbinary, msgpack)
+- ✅ Compression support (LZF, ZSTD, LZ4)
+- ✅ Connection pooling and persistence
+- ✅ Transactions and pipelining
+- ✅ Pub/Sub messaging
+
+**Best For:**
+- Web application caching
+- Session management
+- Real-time analytics
+- Message queuing
+- Leaderboards and counting
+- Geospatial applications
+
+**Performance Benefits:**
+- 🚀 In-memory storage (sub-millisecond latency)
+- 🚀 Reduces database load by 60-90%
+- 🚀 Handles 100,000+ operations/second
+- 🚀 Built-in data structure operations
 
 ## Installation Guide
 
