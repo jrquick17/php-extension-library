@@ -132,14 +132,21 @@ echo "extension=redis.so" >> /path/to/php.ini
 ### PCNTL Extension
 - PHP 5.3.27 - 5.6.36
 - PHP 7.0.0 - 7.4.15
-- PHP 8.0.0 - 8.0.2
+- PHP 8.0.0 - 8.4.2
 
 ### Redis Extension
 - PHP 5.0.0 - 5.6.36
 - PHP 7.0.0 - 7.4.15
-- PHP 8.0.0 - 8.0.2
+- PHP 8.0.0 - 8.4.2
 
-> **Note:** Over 300 specific PHP versions are supported. Check the repository directories for your exact version.
+**Latest PHP 8.x Versions Added:**
+- PHP 8.0.3 - 8.0.30
+- PHP 8.1.0 - 8.1.30
+- PHP 8.2.0 - 8.2.26
+- PHP 8.3.0 - 8.3.15
+- PHP 8.4.0 - 8.4.2
+
+> **Note:** Over 500 specific PHP versions are now supported. Check the repository directories for your exact version.
 
 ## Troubleshooting
 
