@@ -18,32 +18,33 @@ This library provides pre-compiled shared object files for popular PHP extension
 **Available Extensions:**
 - **pcntl** - Process Control functions for Unix-like systems
 - **redis** - Redis client for connecting to Redis databases
+- **curl** - HTTP client library for API interactions and web requests
 
 ## Extension Comparison Table
 
-| Feature | **PCNTL** | **Redis** |
-|---------|-----------|-----------|
-| **Primary Purpose** | Process Control & Forking | In-Memory Data Store & Caching |
-| **Platform Support** | Unix/Linux only | Cross-platform |
-| **Web Server Compatible** | ❌ CLI only | ✅ Full support |
-| **Memory Usage** | Low | High (in-memory storage) |
-| **Performance Impact** | Minimal | Very fast (RAM-based) |
-| **Data Persistence** | N/A | Optional (configurable) |
-| **Complexity** | Medium | Low-Medium |
-| **Learning Curve** | Steep | Moderate |
+| Feature | **PCNTL** | **Redis** | **cURL** |
+|---------|-----------|-----------|----------|
+| **Primary Purpose** | Process Control & Forking | In-Memory Data Store & Caching | HTTP Client & API Communication |
+| **Platform Support** | Unix/Linux only | Cross-platform | Cross-platform |
+| **Web Server Compatible** | ❌ CLI only | ✅ Full support | ✅ Full support |
+| **Memory Usage** | Low | High (in-memory storage) | Low-Medium |
+| **Performance Impact** | Minimal | Very fast (RAM-based) | Network-dependent |
+| **Data Persistence** | N/A | Optional (configurable) | N/A (request-based) |
+| **Complexity** | Medium | Low-Medium | Low |
+| **Learning Curve** | Steep | Moderate | Easy |
 
 ### 📋 **Detailed Feature Comparison**
 
-| **Category** | **PCNTL Extension** | **Redis Extension** |
-|--------------|-------------------|-------------------|
-| **Core Functions** | `pcntl_fork()`, `pcntl_exec()`, `pcntl_wait()`, `pcntl_signal()` | `SET`, `GET`, `DEL`, `EXISTS`, `EXPIRE`, `INCR` |
-| **Data Types** | Process IDs, Exit codes, Signals | Strings, Lists, Sets, Hashes, Sorted Sets, Streams |
-| **Concurrency** | Multi-process via forking | Single-threaded with async I/O |
-| **Use Cases** | CLI scripts, daemons, parallel processing | Web caching, session storage, real-time features |
-| **Resource Usage** | CPU-intensive for forking | Memory-intensive for storage |
-| **Scalability** | Limited by system processes | Horizontal via clustering |
-| **Error Handling** | Signal-based, exit codes | Exception-based, connection errors |
-| **Configuration** | Process limits, signal masks | Connection pools, serialization, compression |
+| **Category** | **PCNTL Extension** | **Redis Extension** | **cURL Extension** |
+|--------------|-------------------|-------------------|-------------------|
+| **Core Functions** | `pcntl_fork()`, `pcntl_exec()`, `pcntl_wait()`, `pcntl_signal()` | `SET`, `GET`, `DEL`, `EXISTS`, `EXPIRE`, `INCR` | `curl_init()`, `curl_exec()`, `curl_setopt()`, `curl_multi_init()` |
+| **Data Types** | Process IDs, Exit codes, Signals | Strings, Lists, Sets, Hashes, Sorted Sets, Streams | HTTP responses, Headers, JSON/XML data |
+| **Concurrency** | Multi-process via forking | Single-threaded with async I/O | Multi-handle async requests |
+| **Use Cases** | CLI scripts, daemons, parallel processing | Web caching, session storage, real-time features | API consumption, web scraping, file transfers |
+| **Resource Usage** | CPU-intensive for forking | Memory-intensive for storage | Network I/O intensive |
+| **Scalability** | Limited by system processes | Horizontal via clustering | Concurrent requests via multi-handle |
+| **Error Handling** | Signal-based, exit codes | Exception-based, connection errors | HTTP status codes, curl error codes |
+| **Configuration** | Process limits, signal masks | Connection pools, serialization, compression | Timeouts, SSL settings, proxy configuration |
 
 ## Supported Extensions
 
@@ -94,6 +95,36 @@ This library provides pre-compiled shared object files for popular PHP extension
 - 🚀 Handles 100,000+ operations/second
 - 🚀 Built-in data structure operations
 
+### 📦 cURL Extension
+**HTTP Client Library for Web Communication**
+
+**Key Features:**
+- ✅ HTTP/HTTPS requests (`curl_init()`, `curl_exec()`)
+- ✅ Multiple protocol support (FTP, SMTP, POP3, IMAP)
+- ✅ SSL/TLS authentication and certificates
+- ✅ Asynchronous requests (`curl_multi_init()`)
+- ✅ File upload/download capabilities
+- ✅ Proxy support and authentication
+- ✅ Cookie handling and session management
+- ✅ Custom headers and request methods
+
+**Best For:**
+- REST API integration
+- Web scraping and data extraction
+- File transfers (HTTP, FTP, SFTP)
+- OAuth authentication flows
+- Webhook implementations
+- Third-party service integration
+- Payment gateway communication
+
+**Advanced Capabilities:**
+- 🌐 25+ supported protocols
+- 🔒 Built-in SSL/TLS encryption
+- ⚡ Concurrent request handling
+- 🔄 Automatic redirect following
+- 📊 Request/response analytics
+- 🛡️ CSRF protection support
+
 ## Installation Guide
 
 ### Method 1: Download Pre-compiled Extension (Recommended)
@@ -105,7 +136,7 @@ This library provides pre-compiled shared object files for popular PHP extension
 
 2. **Download the extension:**
    - Browse to the matching `phpX.Y.Z/` directory
-   - Download the required `.so` file (`pcntl.so` or `redis.so`)
+   - Download the required `.so` file (`pcntl.so`, `redis.so`, or `curl.so`)
 
 3. **Find your PHP extensions directory:**
    ```bash
@@ -138,11 +169,13 @@ This library provides pre-compiled shared object files for popular PHP extension
    echo "extension=pcntl.so" >> /path/to/php.ini
    # OR
    echo "extension=redis.so" >> /path/to/php.ini
+   # OR
+   echo "extension=curl.so" >> /path/to/php.ini
    ```
 
 6. **Restart your web server and verify:**
    ```bash
-   php -m | grep -E "(pcntl|redis)"
+   php -m | grep -E "(pcntl|redis|curl)"
    ```
 
 ### Method 2: Compile Using PECL (Alternative)
@@ -190,6 +223,11 @@ echo "extension=redis.so" >> /path/to/php.ini
 - PHP 8.0.0 - 8.4.2
 
 ### Redis Extension
+- PHP 5.0.0 - 5.6.36
+- PHP 7.0.0 - 7.4.15
+- PHP 8.0.0 - 8.4.2
+
+### cURL Extension
 - PHP 5.0.0 - 5.6.36
 - PHP 7.0.0 - 7.4.15
 - PHP 8.0.0 - 8.4.2
