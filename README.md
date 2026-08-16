@@ -138,7 +138,13 @@ This library provides pre-compiled shared object files for popular PHP extension
    - Browse to the matching `phpX.Y.Z/` directory
    - Download the required `.so` file (`pcntl.so`, `redis.so`, or `curl.so`)
 
-3. **Find your PHP extensions directory:**
+3. **Verify the extension integrity (Optional):**
+   You can verify the integrity of the downloaded file against the repository checksums:
+   ```bash
+   sha256sum -c checksums.txt --ignore-missing
+   ```
+
+4. **Find your PHP extensions directory:**
    ```bash
    php -i | grep extension_dir
    ```
@@ -155,12 +161,12 @@ This library provides pre-compiled shared object files for popular PHP extension
    /usr/lib/php/YYYYMMDD/
    ```
 
-4. **Copy the extension file:**
+5. **Copy the extension file:**
    ```bash
    cp downloaded-extension.so /path/to/php/extensions/
    ```
 
-5. **Update php.ini:**
+6. **Update php.ini:**
    ```bash
    # Find your php.ini file
    php --ini
@@ -173,7 +179,7 @@ This library provides pre-compiled shared object files for popular PHP extension
    echo "extension=curl.so" >> /path/to/php.ini
    ```
 
-6. **Restart your web server and verify:**
+7. **Restart your web server and verify:**
    ```bash
    php -m | grep -E "(pcntl|redis|curl)"
    ```
