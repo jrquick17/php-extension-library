@@ -498,8 +498,18 @@ function pcntl() {
         config="php7.4.12/bin/php-config"
     elif [[ $1 == 7.* ]]; then
         config="php7.4.12/bin/php-config"
-    elif [[ $1 == 8.* ]]; then
+    elif [[ $1 == 8.0.* ]]; then
         config="php8.0.0/bin/php-config"
+    elif [[ $1 == 8.1.* ]]; then
+        config="php8.1.0/bin/php-config"
+    elif [[ $1 == 8.2.* ]]; then
+        config="php8.2.0/bin/php-config"
+    elif [[ $1 == 8.3.* ]]; then
+        config="php8.3.0/bin/php-config"
+    elif [[ $1 == 8.4.* ]]; then
+        config="php8.4.0/bin/php-config"
+    elif [[ $1 == 8.* ]]; then
+        config="php8.4.0/bin/php-config"
     else
         config=""
     fi
@@ -554,8 +564,18 @@ function redis() {
         config="php7.4.12/bin/php-config"
     elif [[ $1 == 7.* ]]; then
         config="php7.4.12/bin/php-config"
-    elif [[ $1 == 8.* ]]; then
+    elif [[ $1 == 8.0.* ]]; then
         config="php8.0.0/bin/php-config"
+    elif [[ $1 == 8.1.* ]]; then
+        config="php8.1.0/bin/php-config"
+    elif [[ $1 == 8.2.* ]]; then
+        config="php8.2.0/bin/php-config"
+    elif [[ $1 == 8.3.* ]]; then
+        config="php8.3.0/bin/php-config"
+    elif [[ $1 == 8.4.* ]]; then
+        config="php8.4.0/bin/php-config"
+    elif [[ $1 == 8.* ]]; then
+        config="php8.4.0/bin/php-config"
     else
         config=""
     fi
