@@ -9,7 +9,7 @@ A collection of pre-compiled PHP extensions (`.so` files) for easy installation 
 - [Installation Guide](#installation-guide)
 - [Supported PHP Versions](#supported-php-versions)
 - [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
+- [Building from Source / Contributing](#building-from-source--contributing)
 
 ## Overview
 
@@ -286,7 +286,7 @@ chown www-data:www-data /path/to/extension.so  # Linux
    - Error messages
    - Installation method used
 
-## Contributing
+## Building from Source / Contributing
 
 Contributions are welcome! Please feel free to:
 
@@ -294,6 +294,29 @@ Contributions are welcome! Please feel free to:
 - Request support for additional PHP versions
 - Submit pull requests with improvements
 - Add support for new extensions
+
+### Build Environment Requirements
+
+- Linux or macOS (pcntl is Unix-only)
+- `autoconf`, `make`, `gcc`, `phpize` must be installed
+- On macOS: `brew install autoconf`
+
+### How to Build a New PHP Version
+
+```bash
+# Add the version to the versions array at the top of populate.sh
+# Then run:
+source populate.sh
+all_libraries  # builds all versions in the array
+# Or build a single version:
+pcntl "8.4.3"
+redis "8.4.3"
+```
+
+### PHP Version Notes
+
+- **Why PHP 6.x is absent:** PHP 6 was an internal development branch that was never publicly released. PHP version numbers jumped from 5.x directly to 7.0.
+- **Why PHP 3.x and 4.x are commented out:** Extension compilation for these versions requires older toolchains and is not currently supported.
 
 ---
 
