@@ -1,0 +1,18 @@
+NOTICE
+
+This repository contains pre-compiled binaries for the following PHP extensions, which are subject to their respective upstream licenses:
+
+1. pcntl
+   - Project: PHP (Process Control Extension)
+   - License: PHP License v3.01
+   - License URL: https://www.php.net/license/3_01.txt
+
+2. curl
+   - Project: PHP (cURL Extension)
+   - License: PHP License v3.01
+   - License URL: https://www.php.net/license/3_01.txt
+
+3. phpredis
+   - Project: phpredis (Redis client for PHP)
+   - License: BSD 3-Clause License
+   - License URL: https://github.com/phpredis/phpredis/blob/develop/LICENSE
