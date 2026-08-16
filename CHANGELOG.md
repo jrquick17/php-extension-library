@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Repository `LICENSE` file (MIT License) for build and installation scripts.
+- Repository `NOTICE` file and README attribution section clarifying upstream licenses for pre-compiled PHP extension binaries (pcntl, curl, phpredis).
+
 ## [1.0.0] - 2026-08-15
 
 ### Added

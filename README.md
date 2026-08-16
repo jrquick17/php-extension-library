@@ -322,4 +322,11 @@ redis "8.4.3"
 
 **Author:** [jrquick.com](https://jrquick.com)
 
-**License:** Please check individual extension licenses
+**License:** The repository's own scripts (e.g., `populate.sh`, `install.sh`, `generate-manifest.py`) are licensed under the [MIT License](file:///C:/Users/jrqui/development/encounting/php-extension-library/LICENSE).
+
+The pre-compiled extension binaries are subject to their respective upstream licenses:
+- **pcntl** and **curl**: Part of PHP, licensed under the [PHP License v3.01](https://www.php.net/license/3_01.txt).
+- **redis**: [BSD 3-Clause License](https://github.com/phpredis/phpredis/blob/develop/LICENSE).
+
+For more details, see the [NOTICE](file:///C:/Users/jrqui/development/encounting/php-extension-library/NOTICE) file.
+
