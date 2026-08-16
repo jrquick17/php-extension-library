@@ -664,6 +664,8 @@ function pcntl() {
 
     cd ../../..
 
+    sha256sum "php$1/pcntl.so" >> checksums.txt
+
     log "Finished pcntl for PHP $1"
 }
 
@@ -745,6 +747,8 @@ function redis() {
     cp -f modules/redis.so "../php$1/redis.so"
 
     cd ..
+
+    sha256sum "php$1/redis.so" >> checksums.txt
 
     log "Finished redis for PHP $1"
 }
