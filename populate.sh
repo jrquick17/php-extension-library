@@ -531,6 +531,35 @@ versions=(
   8.4.2
 )
 
+function download() {
+    if hash wget 2>/dev/null; then
+        wget "$@"
+    elif hash curl 2>/dev/null; then
+        local url=""
+        local output=""
+        while [ "$#" -gt 0 ]; do
+            case "$1" in
+                -O)
+                    output="$2"
+                    shift 2
+                    ;;
+                *)
+                    url="$1"
+                    shift
+                    ;;
+            esac
+        done
+        if [ -n "$output" ]; then
+            curl -L "$url" -o "$output"
+        else
+            curl -L -O "$url"
+        fi
+    else
+        echo "Error: Neither wget nor curl found!" >&2
+        return 1
+    fi
+}
+
 # Write to the command prompt
 # @param $1 message
 function log() {
@@ -567,9 +596,9 @@ function pcntl() {
       fi
 
       if  [[ $major == 0 ]]; then
-        wget "https://www.php.net/distributions/$tar"
+        download "https://www.php.net/distributions/$tar"
       else
-        wget "http://museum.php.net/php$major/php-$1.tar.gz"
+        download "http://museum.php.net/php$major/php-$1.tar.gz"
       fi
 
       tar xvf "$tar"
@@ -619,7 +648,7 @@ function pcntl() {
         config=""
     fi
 
-    wget "https://www.php.net/distributions/php-$1.tar.gz"
+    download "https://www.php.net/distributions/php-$1.tar.gz"
 
     tar xvf "php-$1.tar.gz"
 
@@ -698,7 +727,7 @@ function redis() {
     folder="phpredis-$version"
 
     if [ ! -d "$folder" ]; then
-        wget "https://github.com/phpredis/phpredis/archive/$version.zip" -O "$folder.zip"
+        download "https://github.com/phpredis/phpredis/archive/$version.zip" -O "$folder.zip"
 
         unzip "$folder.zip"
     fi
